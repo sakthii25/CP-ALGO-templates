@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void bfs(std::vector<int> adj[],std::vector<bool> vis,int src){
+void bfs(vector<int>& adj[], vector<bool>& vis,int src){
 	queue<int> q;
 	q.push(src);
 	vis[src] = true;
@@ -10,10 +10,11 @@ void bfs(std::vector<int> adj[],std::vector<bool> vis,int src){
 		cout << v << " ";
 		for(auto j:adj[v]){
 			if(!vis[j]){
+				vis[j] = true;
 				q.push(j);
 			}
-			vis[j] = true;
 		}
+		cout << endl;
 	}
 	cout << endl;
 }
